@@ -16,9 +16,6 @@ export class AllGames extends Component {
 
   render() {
     const { games, gamesError } = this.props;
-    if (games) {
-      console.log("Games Results ====>", games.results);
-    }
 
     return (
       <div>
