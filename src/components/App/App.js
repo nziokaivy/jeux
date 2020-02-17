@@ -12,6 +12,7 @@ import CreatorDetails from '../CreatorDetails/CreatorDetails';
 import AllTags from '../AllTags/AllTags';
 import TagDetails from '../TagDetails/TagDetails';
 import AllStores from '../AllStores/AllStores';
+import StoreDetails from '../StoreDetails/StoreDetails';
 
 class App extends Component {
   render() {
@@ -32,6 +33,7 @@ class App extends Component {
           <Route exact path='/tag/:id' component={ TagDetails }></Route>
 
           <Route exact path='/allStores' component={ AllStores }></Route>
+          <Route exact path='/store/:id' component={ StoreDetails }></Route>
         </Switch>
       </Router>
     </Provider>

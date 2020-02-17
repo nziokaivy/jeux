@@ -6,6 +6,7 @@ import creatorDetailsReducer from './creatorDetailsReducer';
 import allTagsReducer from './allTagsReducer';
 import tagDetailsReducer from './tagDetailsReducer';
 import allStoresReducer from './allStoresReducer';
+import storeDetailsReducer from './storeDetailsReducer';
 
 export default combineReducers({
     allGames: allGamesReducer,
@@ -15,4 +16,5 @@ export default combineReducers({
     allTags: allTagsReducer,
     tagDetails: tagDetailsReducer,
     allStores: allStoresReducer,
+    storeDetails:storeDetailsReducer,
 });
