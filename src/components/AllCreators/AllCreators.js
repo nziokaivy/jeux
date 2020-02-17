@@ -18,7 +18,7 @@ export class AllCreators extends Component {
     const { creators, creatorsError } = this.props;
     return (
       <div>
-        <h1 className="allGames-title"> Game Details</h1>
+        <h1 className="allGames-title"> Creators</h1>
         <hr className='legend' />
         <div className="allCreators" id="creators">
           <div className="flex-grid">
