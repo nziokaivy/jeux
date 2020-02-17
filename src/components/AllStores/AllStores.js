@@ -31,7 +31,7 @@ export class AllStores extends Component {
                     src={stores.image_background}
                   />
                   <div className="overlay">
-                    <Link to={"/stores/" + stores.id} className="text">
+                    <Link to={"/store/" + stores.id} className="text">
                        {stores.name}
                     </Link>
                   </div>
