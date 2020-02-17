@@ -5,6 +5,7 @@ import allCreatorsReducer from './allCreatorsReducer.js';
 import creatorDetailsReducer from './creatorDetailsReducer';
 import allTagsReducer from './allTagsReducer';
 import tagDetailsReducer from './tagDetailsReducer';
+import allStoresReducer from './allStoresReducer';
 
 export default combineReducers({
     allGames: allGamesReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
     creatorDetails: creatorDetailsReducer,
     allTags: allTagsReducer,
     tagDetails: tagDetailsReducer,
+    allStores: allStoresReducer,
 });
