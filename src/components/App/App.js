@@ -10,6 +10,7 @@ import GameDetails from '../GameDetails/GameDetails';
 import AllCreators from '../AllCreators/AllCreators';
 import CreatorDetails from '../CreatorDetails/CreatorDetails';
 import AllTags from '../AllTags/AllTags';
+import TagDetails from '../TagDetails/TagDetails';
 
 class App extends Component {
   render() {
@@ -22,9 +23,12 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={AllGames}></Route>
           <Route exact path='/game/:id' component={ GameDetails }></Route>
+
           <Route exact path='/allCreators' component={ AllCreators }></Route>
           <Route exact path='/creator/:id' component={ CreatorDetails }></Route>
+
           <Route exact path='/allTags' component={ AllTags }></Route>
+          <Route exact path='/tag/:id' component={ TagDetails }></Route>
         </Switch>
       </Router>
     </Provider>
