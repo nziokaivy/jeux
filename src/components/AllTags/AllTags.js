@@ -35,7 +35,7 @@ export class AllTags extends Component {
                     src={tags.image_background}
                   />
                   <div className="overlay">
-                    <Link to={"/tags/" + tags.id} className="text">
+                    <Link to={"/tag/" + tags.id} className="text">
                        {tags.name}
                     </Link>
                   </div>
