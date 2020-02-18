@@ -17,10 +17,6 @@ export class AllTags extends Component {
 
   render() {
     const { tags } = this.props;
-    console.log('this.props',this.props);
-    console.log('tags',tags);
-    
-    
 
     return (
       <div>

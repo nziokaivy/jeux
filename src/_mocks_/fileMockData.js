@@ -1,22 +1,4 @@
 const mockData = {
-successResponse: {
-    profileInformation: {
-      data: {
-        firstName: 'John',
-        lastName: 'Doe',
-        img: 'dummy.image',
-      },
-    },
-  },
-  errorResponse: {
-    error: {
-      response: {
-        data: {
-          info: 'No profile',
-        },
-      },
-    },
-  },
   AllCreatorsMainState: {
     allCreators: {
       creators: null,
@@ -25,9 +7,11 @@ successResponse: {
   },
   AllCreatorsProps: {
     creators: {
-      data: {
+      results: [{
         name: 'user test',
-      },
+        id: 1,
+        image: 'text.png',
+      }],
     },
   },
   creatorDetailsMainState: {
@@ -37,27 +21,23 @@ successResponse: {
     },
   },
   creatorDetailsProps: {
+    fetchCreatorDetails: jest.fn(),
     creatorDetails: {
-        description: 'ason Graves is a games composer',
-        games_count: 52,
-        id: 88,
-        image_background: "https://media.rawg.io/media/games/81b/81b138691f027ed1f8720758daa0d895.jpg",
-        name: "Jason Graves",
-      creatorDetailsErrors: null,
-      fetchCreatorDetails: jest.fn(),
-      match: {
-        params: {
-          id: '88',
-        }
-      },
+      id: 88,
+      image: "https://media.rawg.io/media/games/81b/81b138691f027ed1f8720758daa0d895.jpg",
+      name: "Jason Graves",
+      description: 'ason Graves is a games composer',
+      games_count: 52,
+      rating: 2.5,
     }
   },
 
 allGamesProps : {
   fetchAllGames: jest.fn(),
   games : {
-    results: {
-      background_image: "https://media.rawg.io/media/games/81b/81b138691f027ed1f8720758daa0d895.jpg",
+    results: [{
+      name: 'Jason Graves',
+      image: "https://media.rawg.io/media/games/81b/81b138691f027ed1f8720758daa0d895.jpg",
       id: 75,
       released:"2013-09-17",
       rating:4.48,
@@ -65,10 +45,11 @@ allGamesProps : {
         {
           name: 'Action',
           id: 21,
+          image: 'https://media.rawg.io/media/games/81b/81b138691f027ed1f8720758daa0d895.jpg',
         }
       ]
 
-    }
+    }]
   }
 },
 allGamesMainState: {
@@ -94,12 +75,21 @@ gameDetailsProps:{
     genres: [
       {
         id: 34,
+        genre: 'name',
 
       }
     ]
 },
 },
-
+allStoresProps: {
+  stores: {
+    results: [{
+      name: 'user store',
+      id: 1,
+      image_background: 'text.png',
+    }],
+  },
+},
 allStoresMainState: {
   allStores: {
     stores: null,
@@ -113,7 +103,15 @@ storesDetailsMainState: {
     storeDetailsError: null
   }
 },
-
+allTagsProps: {
+  tags: {
+    results: [{
+      name: 'user tag',
+      id: 1,
+      image_background: 'text.png',
+    }],
+  },
+},
 allTagsMainState: {
   allTags: {
    tags: null,

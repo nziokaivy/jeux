@@ -23,10 +23,10 @@ const setUp = (initialState = {}) => {
 };
 
 describe('All Creator Details Test Suite', () => {
-  // it('Should Pass New props Successfully', () => {
-  //   const component = setUp(mockData.allTagsMainState);
-  //   component.setProps({games: mockData.allGamesProps})
-  // });
+  it('Should Pass New props Successfully', () => {
+    const component = setUp(mockData.allTagsProps.tags);
+    component.setProps({tags: mockData.allTagsProps.tags})
+  });
 
   it('Should return initial data', () => {
     const stores = testStore(mockData.allTagsMainState);

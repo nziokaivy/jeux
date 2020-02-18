@@ -11,17 +11,11 @@ export class TagDetails extends Component {
 
   async componentDidMount() {
     const { id } = this.props.match.params;
-    const { fetchTagDetails } = this.props;
-    await fetchTagDetails(id);
-    let tagInfo;
-    if (this.props.fetchTagDetails) {
-      tagInfo = this.props.fetchTagDetails;
-    }
+    await this.props.fetchTagDetails(id);
   }
 
   render() {
-    const { tagDetails, tagDetailsError } = this.props;
-    console.log('tagDetails', tagDetails);
+    const { tagDetails } = this.props;
     
     return (
         <div className="main-game-details">
