@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./AllCreators.css";
-import { fetchCreators } from '../../redux/actions/allCreatorsAction';
+import './AllCreators.css';
+import { fetchCreators } from '../../redux/actions/Creators/allCreatorsAction';
 import { connect } from "react-redux";
 
 export class AllCreators extends Component {
@@ -10,12 +10,13 @@ export class AllCreators extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    this.props.fetchCreators();
+  async componentDidMount() {
+    const { fetchCreators } = this.props;
+    await fetchCreators();
   }
 
   render() {
-    const { creators, creatorsError } = this.props;
+    const { creators } = this.props;
     return (
       <div>
         <h1 className="allGames-title"> Creators</h1>
@@ -33,7 +34,6 @@ export class AllCreators extends Component {
                   </div>
                 </div>
               ))}
-            {creatorsError && <h1>{creatorsError}</h1>}
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@ export class AllCreators extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   creators: state.allCreators.creators,
   creatorsError: state.allCreators.creatorsError
 });

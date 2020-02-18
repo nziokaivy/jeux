@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./AllTags.css";
-import { fetchAllTags } from '../../redux/actions/allTagsAction';
+import { fetchAllTags } from '../../redux/actions/Tags/allTagsAction';
 import { connect } from "react-redux";
 
 export class AllTags extends Component {
@@ -10,12 +10,13 @@ export class AllTags extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    this.props.fetchAllTags();
+  async componentDidMount() {
+    const { fetchAllTags } = this.props;
+    await fetchAllTags();
   }
 
   render() {
-    const { tags, tagsError } = this.props;
+    const { tags } = this.props;
     console.log('this.props',this.props);
     console.log('tags',tags);
     
@@ -41,7 +42,6 @@ export class AllTags extends Component {
                   </div>
                 </div>
               ))}
-            {tagsError && <h1>{tagsError}</h1>}
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ export class AllTags extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   tags: state.allTags.tags,
   tagsError: state.allTags.tagsError
 });

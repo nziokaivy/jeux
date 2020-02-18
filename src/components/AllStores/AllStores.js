@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./AllStores.css";
-import { fetchAllStores } from '../../redux/actions/allStoresAction';
+import { fetchAllStores } from '../../redux/actions/Stores/allStoresAction';
 import { connect } from "react-redux";
 
 export class AllStores extends Component {
@@ -10,11 +10,12 @@ export class AllStores extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    this.props.fetchAllStores();
+  async componentDidMount() {
+    const { fetchAllStores } = this.props;
+    await fetchAllStores();
   }
   render() {   
-    const { stores, storesError } = this.props;
+    const { stores } = this.props;
     
 
     return (
@@ -37,7 +38,6 @@ export class AllStores extends Component {
                   </div>
                 </div>
               ))}
-            {storesError && <h1>{storesError}</h1>}
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@ export class AllStores extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   stores: state.allStores.stores,
   storesError: state.allStores.storesError
 });

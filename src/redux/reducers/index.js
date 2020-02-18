@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import allGamesReducer from './allGamesReducer.js';
-import gameDetailsReducer from './gameDetailsReducer.js';
-import allCreatorsReducer from './allCreatorsReducer.js';
-import creatorDetailsReducer from './creatorDetailsReducer';
-import allTagsReducer from './allTagsReducer';
-import tagDetailsReducer from './tagDetailsReducer';
-import allStoresReducer from './allStoresReducer';
-import storeDetailsReducer from './storeDetailsReducer';
+import allGamesReducer from '../reducers/Games/allGamesReducer';
+import gameDetailsReducer from '../reducers/Games/gameDetailsReducer';
+import allCreatorsReducer from '../reducers/Creators/allCreatorsReducer';
+import creatorDetailsReducer from '../reducers/Creators/creatorDetailsReducer';
+import allTagsReducer from '../reducers/Tags/allTagsReducer';
+import tagDetailsReducer from '../reducers/Tags/tagDetailsReducer';
+import allStoresReducer from '../reducers/Store/allStoresReducer';
+import storeDetailsReducer from '../reducers/Store/storeDetailsReducer';
 
 export default combineReducers({
     allGames: allGamesReducer,
