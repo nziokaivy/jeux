@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./allGames.css";
-import { fetchAllGames } from '../../redux/actions/allGamesActions';
+import { fetchAllGames } from '../../redux/actions/Games/allGamesActions';
 import { connect } from "react-redux";
 
 export class AllGames extends Component {
@@ -10,12 +10,13 @@ export class AllGames extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    this.props.fetchAllGames();
+  async componentDidMount() {
+    const { fetchAllGames } = this.props;
+    await fetchAllGames();
   }
 
   render() {
-    const { games, gamesError } = this.props;
+    const { games } = this.props;
 
     return (
       <div>
@@ -37,7 +38,6 @@ export class AllGames extends Component {
                   </div>
                 </div>
               ))}
-            {gamesError && <h1>{gamesError}</h1>}
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@ export class AllGames extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   games: state.allGames.games,
   gamesError: state.allGames.gamesError
 });

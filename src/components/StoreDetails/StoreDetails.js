@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import "./StoreDetails.css";
-import { fetchStoreDetails } from '../../redux/actions/storeDetailsAction';
+import { fetchStoreDetails } from '../../redux/actions/Stores/storeDetailsAction';
 
- class StoreDetails extends Component {
+export class StoreDetails extends Component {
   async componentDidMount() {
     const { id } = this.props.match.params;
     const { fetchStoreDetails } = this.props;
@@ -40,9 +40,9 @@ render() {
   }
   
 }
-const mapStatetoProps = state => ({
+export const mapStateToProps = state => ({
   storeDetails: state.storeDetails.storeDetails,
   storeDetailsErrors: state.storeDetailsError,
 });
 
-export default connect(mapStatetoProps, { fetchStoreDetails })(StoreDetails);
+export default connect(mapStateToProps, { fetchStoreDetails })(StoreDetails);

@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./CreatorDetails.css";
-import { fetchCreatorDetails } from '../../redux/actions/creatorDetailsAction';
+import { fetchCreatorDetails } from '../../redux/actions/Creators/creatorDetailsAction';
 
- class CreatorDetails extends Component {
+export class CreatorDetails extends Component {
   async componentDidMount() {
     const { id } = this.props.match.params;
     const { fetchCreatorDetails } = this.props;
     await fetchCreatorDetails(id);
   }
 render() {
-  const { creatorDetails, creatorDetailsErrors} = this.props;      
+  const { creatorDetails} = this.props;      
     return (
         
       <div className="creatorDetails">
@@ -37,9 +37,9 @@ render() {
   }
   
 }
-const mapStatetoProps = state => ({
+export const mapStateToProps = state => ({
   creatorDetails: state.creatorDetails.creatorDetails,
   creatorDetailsErrors: state.creatorDetailsErrors
 });
 
-export default connect(mapStatetoProps, { fetchCreatorDetails })(CreatorDetails);
+export default connect(mapStateToProps, { fetchCreatorDetails })(CreatorDetails);

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./GameDetails.css";
-import { fetchGameDetails } from '../../redux/actions/gameDetailsAction';
+import { fetchGameDetails } from '../../redux/actions/Games/gameDetailsAction';
 
 export class GameDetails extends Component {
   constructor(props) {
@@ -9,9 +9,10 @@ export class GameDetails extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { id } = this.props.match.params;
-    this.props.fetchGameDetails(id);
+    const { fetchGameDetails } = this.props
+    await fetchGameDetails(id);
     let gameInfo;
     if (this.props.gameDetails) {
       gameInfo = this.props.gameDetails;
@@ -58,8 +59,8 @@ export class GameDetails extends Component {
     );
   }
 }
-const mapStatetoProps = state => ({
+export const mapStateToProps = state => ({
   gameDetails: state.gameDetails.gameDetails,
   gamesError: state.gameDetails.Error
 });
-export default connect(mapStatetoProps, { fetchGameDetails })(GameDetails);
+export default connect(mapStateToProps, { fetchGameDetails })(GameDetails);

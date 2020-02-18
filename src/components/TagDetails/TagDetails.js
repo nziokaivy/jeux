@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./TagDetails.css";
-import { fetchTagDetails } from '../../redux/actions/tagDetailsAction';
+import { fetchTagDetails } from '../../redux/actions/Tags/tagDetailsAction';
 
 export class TagDetails extends Component {
   constructor(props) {
@@ -9,9 +9,10 @@ export class TagDetails extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { id } = this.props.match.params;
-    this.props.fetchTagDetails(id);
+    const { fetchTagDetails } = this.props;
+    await fetchTagDetails(id);
     let tagInfo;
     if (this.props.fetchTagDetails) {
       tagInfo = this.props.fetchTagDetails;
@@ -46,8 +47,8 @@ export class TagDetails extends Component {
     );
   }
 }
-const mapStatetoProps = state => ({
+export const mapStateToProps = state => ({
   tagDetails: state.tagDetails.tagsDetails,
   tagDetailsError: state.tagDetails.Error
 });
-export default connect(mapStatetoProps, { fetchTagDetails })(TagDetails);
+export default connect(mapStateToProps, { fetchTagDetails })(TagDetails);
