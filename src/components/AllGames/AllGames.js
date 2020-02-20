@@ -5,10 +5,6 @@ import { fetchAllGames } from '../../redux/actions/Games/allGamesActions';
 import { connect } from "react-redux";
 
 export class AllGames extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
 
   async componentDidMount() {
     const { fetchAllGames } = this.props;

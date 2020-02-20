@@ -5,17 +5,17 @@ import thunk from 'redux-thunk';
 import  { AllCreators, mapStateToProps } from '../../../components/AllCreators/AllCreators';
 import rootReducer from '../../../redux/reducers/index';
 import mockData from '../../../_mocks_/fileMockData';
-
+import store from '../../../redux/store/index';
 const middlewares = [thunk];
-let store;
+//  let store;
 
-const testStore = (state) => {
-  const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
-  return createStoreWithMiddleware(rootReducer, state);
-};
+// const store = (state) => {
+//   const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
+//   return createStoreWithMiddleware(rootReducer, state);
+// };
 
 const setUp = (initialState = {}) => {
-  store = testStore(initialState);
+  // store = testStore(initialState);
   const wrapper = shallow(
     <AllCreators {...mockData.props} store={store} />,
   );
@@ -24,8 +24,8 @@ const setUp = (initialState = {}) => {
 
 describe('All Creators Test Suite', () => {
   it('Should Pass New props Successfully', () => {
-    const component = setUp(mockData.AllCreatorsMainState);
-    // component.setProps({creators: mockData.AllCreatorsProps.creator})
+    const component = setUp(mockData.AllCreatorsProps.creators);
+    component.setProps({creators: mockData.AllCreatorsProps.creators})
   });
 
   it('Should return the initial State', () => {

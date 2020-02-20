@@ -5,27 +5,23 @@ import thunk from 'redux-thunk';
 import  { GameDetails, mapStateToProps } from '../../../components/GameDetails/GameDetails';
 import rootReducer from '../../../redux/reducers/index';
 import mockData from '../../../_mocks_/fileMockData';
+import store from '../../../redux/store';
 
 const middlewares = [thunk];
-let store;
-
-const testStore = (state) => {
-  const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
-  return createStoreWithMiddleware(rootReducer, state);
-};
 
 const setUp = (initialState = {}) => {
-  store = testStore(initialState);
+  //store = testStore(initialState);
   const wrapper = shallow(
-    <GameDetails {...mockData.gameDetailsProps} store={store} />,
+    <GameDetails {...mockData.props} store={store} />,
   );
   return wrapper;
 };
 
 describe('All Creator Details Test Suite', () => {
   it('Should Pass New props Successfully', () => {
-    const component = setUp(mockData.gamesDetailsMainState);
-    //component.setProps({games: mockData.allGamesProps})
+    const component = setUp(mockData.gameDetailsProps);
+    component.setProps({gamesDetails: mockData.gameDetailsProps});
+    
   });
 
   it('Should return the initial State', () => {
