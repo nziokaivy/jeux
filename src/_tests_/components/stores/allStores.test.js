@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import  { AllStores, mapStateToProps } from '../../../components/AllStores/AllStores';
+import  { AllStores, mapStateToProps } from '../../../components/stores/AllStores';
 import rootReducer from '../../../redux/reducers/index';
 import mockData from '../../../_mocks_/fileMockData';
 import store from '../../../redux/store';

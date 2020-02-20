@@ -10,7 +10,6 @@ body {
   background-color: FEFEFE;
   overflow: hidden;
   border: 1px solid #000;
-  height: 30px;
 }
 
 .topnav a.icon {
@@ -34,7 +33,7 @@ body {
   color: #000;
   text-align: center;
   padding: 10px 16px; 
-  padding-right: 20rem;
+  padding-right: 18rem;
   text-decoration: none;
   font-size: 17px;
 }

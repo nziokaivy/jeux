@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./AllStores.css";
+import "../../assets/css/AllStores.css";
 import { fetchAllStores } from '../../redux/actions/Stores/allStoresAction';
 import { connect } from "react-redux";
+import Header from '../../components/elements/Header/Header';
+import HeroImage from '../../components/elements/HeroImage/HeroImage';
+
 
 export class AllStores extends Component {
 
@@ -14,6 +17,9 @@ export class AllStores extends Component {
     const { stores } = this.props;
     
     return (
+      <>
+      <Header />
+      <HeroImage />
       <div>
           <h1 className="allGames-title"> All Stores</h1>
           <hr className='legend' />
@@ -36,6 +42,7 @@ export class AllStores extends Component {
           </div>
         </div>
       </div>
+      </>
     );
   }
 }

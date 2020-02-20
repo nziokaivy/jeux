@@ -6,14 +6,15 @@ import dotenv from 'dotenv';
 import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom";
 import Header from '../elements/Header/Header';
 import HeroImage from '../elements/HeroImage/HeroImage';
-import AllGames from '../AllGames/AllGames';
-import GameDetails from '../GameDetails/GameDetails';
-import AllCreators from '../AllCreators/AllCreators';
-import CreatorDetails from '../CreatorDetails/CreatorDetails';
-import AllTags from '../AllTags/AllTags';
-import TagDetails from '../TagDetails/TagDetails';
-import AllStores from '../AllStores/AllStores';
-import StoreDetails from '../StoreDetails/StoreDetails';
+import AllGames from '../games/AllGames';
+import GameDetails from '../games/GameDetails';
+import AllCreators from '../creators/AllCreators';
+import CreatorDetails from '../creators/CreatorDetails';
+import AllTags from '../tags/AllTags';
+import TagDetails from '../tags/TagDetails';
+import AllStores from '../stores/AllStores';
+import StoreDetails from '../stores/StoreDetails';
+import NotFound from '../elements/NotFound';
 
 dotenv.config();
 
@@ -25,9 +26,8 @@ const App = () => {
       
     <Provider store={store}>
       <Router>
-      <Header />
-      <HeroImage />
         <Switch>
+        
           <Route exact path='/' component={AllGames}></Route>
           <Route exact path='/game/:id' component={ GameDetails }></Route>
 
@@ -39,6 +39,7 @@ const App = () => {
 
           <Route exact path='/all-stores' component={ AllStores }></Route>
           <Route exact path='/store/:id' component={ StoreDetails }></Route>
+          <Route component={NotFound} />
         </Switch>
       </Router>
     </Provider>

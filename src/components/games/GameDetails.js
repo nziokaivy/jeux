@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./GameDetails.css";
+import "../../assets/css/GameDetails.css";
 import { fetchGameDetails } from '../../redux/actions/Games/gameDetailsAction';
+import Header from '../../components/elements/Header/Header';
+import HeroImage from '../../components/elements/HeroImage/HeroImage';
 
 export class GameDetails extends Component {
 
@@ -13,6 +15,9 @@ export class GameDetails extends Component {
   render() {
     const { gameDetails } = this.props;
     return (
+      <>
+      <Header />
+      <HeroImage />
       <div className="main-game-details">
         <h1 className="allGames-title"> Game Details</h1>
         <hr className='legend' />
@@ -43,6 +48,7 @@ export class GameDetails extends Component {
         )}
       </div>
       </div>
+      </>
     );
   }
 }

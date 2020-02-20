@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./CreatorDetails.css";
+import "../../assets/css/CreatorDetails.css";
 import { fetchCreatorDetails } from '../../redux/actions/Creators/creatorDetailsAction';
+import Header from '../../components/elements/Header/Header';
+import HeroImage from '../../components/elements/HeroImage/HeroImage';
 
 export class CreatorDetails extends Component {
   async componentDidMount() {
@@ -12,7 +14,9 @@ render() {
   const { creatorDetails } = this.props;   
      
     return (
-        
+        <>
+        <Header />
+        <HeroImage />
       <div className="creatorDetails">
           <h1 className="allGames-title"> Creator Details</h1>
           <hr className='legend' />
@@ -33,6 +37,7 @@ render() {
           </div>
         )}
       </div>
+      </>
     );
   }
   
