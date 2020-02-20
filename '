@@ -1,0 +1,43 @@
+Merge pull request #10 from nziokaivy/ch-refactor-code
+
+ch(refactor): Refactor code
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Author:    nziokaivy <45204494+nziokaivy@users.noreply.github.com>
+# Date:      Thu Feb 20 10:02:51 2020 +0200
+# Committer: Ivy Nzioka <ivy.nzioka@Ivys-MacBook-Pro.local>
+#
+# On branch ft-not-found-component
+# Your branch is up to date with 'origin/ft-not-found-component'.
+#
+# Changes to be committed:
+#	modified:   .coveralls.yml
+#	modified:   .env
+#	modified:   .gitignore
+#	modified:   .travis.yml
+#	new file:   Procfile
+#	modified:   README.md
+#	modified:   package.json
+#	modified:   src/_mocks_/fileMockData.js
+#	new file:   src/_tests_/components/App/App.test.js
+#	new file:   src/_tests_/components/App/__snapshots__/App.test.js.snap
+#	modified:   src/_tests_/components/creators/allCreators.test.js
+#	modified:   src/_tests_/components/creators/creatorDetails.test.js
+#	deleted:    src/_tests_/components/games/__snapshots__/allGames.test.js.snap
+#	modified:   src/_tests_/components/games/allGames.test.js
+#	modified:   src/_tests_/components/games/gameDetails.test.js
+#	modified:   src/_tests_/components/stores/allStores.test.js
+#	modified:   src/_tests_/components/tags/allTags.test.js
+#	modified:   src/components/AllGames/AllGames.js
+#	modified:   src/components/AllStores/AllStores.js
+#	modified:   src/components/AllTags/AllTags.js
+#	modified:   src/components/CreatorDetails/CreatorDetails.js
+#	modified:   src/components/GameDetails/GameDetails.js
+#	modified:   src/components/StoreDetails/StoreDetails.js
+#	modified:   src/components/TagDetails/TagDetails.js
+#	modified:   src/components/elements/Header/Header.css
+#	modified:   src/components/elements/Header/Header.js
+#	modified:   webpack.config.js
+#

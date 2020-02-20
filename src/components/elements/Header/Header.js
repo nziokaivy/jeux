@@ -6,7 +6,6 @@ const Header = ()=> {
     return (
       <div className="topnav">
       <Link to="/">JEUX</Link>
-      <Link to="/">Games</Link>
       <Link to="/all-creators">Creators</Link>
       <Link to="/all-tags">Tags</Link>
       <Link to="/all-stores">Stores</Link>

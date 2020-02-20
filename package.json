@@ -11,7 +11,7 @@
     "test:coverage": "jest --coverage --verbose true",
     "test:watch": "jest --watch",
     "watch": "npm run webpack-dev-server --hot --inline -- --env.mode development",
-    "coveralls": "coveralls"
+    "coveralls": " ./tests/coverage/lcov.info | coveralls"
 },
   "repository": {
     "type": "git",
