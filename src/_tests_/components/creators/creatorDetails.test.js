@@ -5,29 +5,29 @@ import thunk from 'redux-thunk';
 import  { CreatorDetails, mapStateToProps } from '../../../components/CreatorDetails/CreatorDetails';
 import rootReducer from '../../../redux/reducers/index';
 import mockData from '../../../_mocks_/fileMockData';
+import store from '../../../redux/store/index';
 
 const middlewares = [thunk];
-let store;
+//let store;
 
-const testStore = (state) => {
-  const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
-  return createStoreWithMiddleware(rootReducer, state);
-};
+// const testStore = (state) => {
+//   const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
+//   return createStoreWithMiddleware(rootReducer, state);
+// };
 
 const setUp = (initialState = {}) => {
-  store = testStore(initialState);
+  //store = testStore(initialState);
   const wrapper = shallow(
-    <CreatorDetails {...mockData.creatorDetailsProps} store={store} />,
+    <CreatorDetails {...mockData.props} store={store} />,
   );
   return wrapper;
 };
 
 describe('All Creator Details Test Suite', () => {
   it('Should Pass New props Successfully', () => {
-    const component = setUp(mockData.creatorDetailsMainState);
-    // component.setProps({creators: mockData.AllCreatorsProps.creator})
+    const component = setUp(mockData.creatorDetailsProps.creatorDetails);
+    //component.setProps({creatorDetails: mockData.creatorDetailsProps})
   });
-
 
   it('Should return the initial State', () => {
     const initialState = {

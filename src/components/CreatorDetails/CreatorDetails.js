@@ -6,11 +6,11 @@ import { fetchCreatorDetails } from '../../redux/actions/Creators/creatorDetails
 export class CreatorDetails extends Component {
   async componentDidMount() {
     const { id } = this.props.match.params;
-    const { fetchCreatorDetails } = this.props;
-    await fetchCreatorDetails(id);
+    await this.props.fetchCreatorDetails(id);
   }
 render() {
-  const { creatorDetails} = this.props;      
+  const { creatorDetails } = this.props;   
+     
     return (
         
       <div className="creatorDetails">

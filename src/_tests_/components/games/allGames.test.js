@@ -5,35 +5,36 @@ import thunk from 'redux-thunk';
 import  { AllGames, mapStateToProps } from '../../../components/AllGames/AllGames';
 import rootReducer from '../../../redux/reducers/index';
 import mockData from '../../../_mocks_/fileMockData';
+import store from '../../../redux/store';
 
 const middlewares = [thunk];
-let store;
+// let store;
 
-const testStore = (state) => {
-  const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
-  return createStoreWithMiddleware(rootReducer, state);
-};
+// const testStore = (state) => {
+//   const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
+//   return createStoreWithMiddleware(rootReducer, state);
+// };
 
 const setUp = (initialState = {}) => {
-  store = testStore(initialState);
+  //store = testStore(initialState);
   const wrapper = shallow(
-    <AllGames {...mockData.allGamesProps} store={store} />,
+    <AllGames {...mockData.props} store={store} />,
   );
   return wrapper;
 };
 
-describe('All Creator Details Test Suite', () => {
-  // it('Should Pass New props Successfully', () => {
-  //   const component = setUp(mockData.allGamesMainState);
-  //   component.setProps({games: mockData.allGamesProps})
-  // });
-
-  it('Should return initial data', () => {
-    const stores = testStore(mockData.allGamesMainState);
-    expect(shallow(
-      <AllGames store={stores} />,
-    )).toMatchSnapshot();
+describe('All Games Details Test Suite', () => {
+  it('Should Pass New props Successfully', () => {
+    const component = setUp(mockData.allGamesProps.games);
+    component.setProps({games: mockData.allGamesProps.games});
   });
+
+  // it('Should return initial data', () => {
+  //   const stores = testStore(mockData.allGamesMainState);
+  //   expect(shallow(
+  //     <AllGames store={stores} />,
+  //   )).toMatchSnapshot();
+  // });
 
 
   it('Should return the initial State', () => {

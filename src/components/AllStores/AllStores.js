@@ -5,10 +5,6 @@ import { fetchAllStores } from '../../redux/actions/Stores/allStoresAction';
 import { connect } from "react-redux";
 
 export class AllStores extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
 
   async componentDidMount() {
     const { fetchAllStores } = this.props;
@@ -17,7 +13,6 @@ export class AllStores extends Component {
   render() {   
     const { stores } = this.props;
     
-
     return (
       <div>
           <h1 className="allGames-title"> All Stores</h1>

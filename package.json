@@ -6,13 +6,12 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --hot --history-api-fallback --config webpack.config.js",
     "build": "webpack --mode production",
-    "test": "jest --coverage",
     "start": "HTTPS=true serve -s ./dist",
-    "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
-    "coveralls-coverage": "coveralls < lcov.info",
-    "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
-    "coverage": "npm test && nyc report --reporter=text-lcov",
-    "coveralls": "jest --coverage && coveralls"
+    "test": "jest --verbose true",
+    "test:coverage": "jest --coverage --verbose true",
+    "test:watch": "jest --watch",
+    "watch": "npm run webpack-dev-server --hot --inline -- --env.mode development",
+    "coveralls": " ./tests/coverage/lcov.info | coveralls"
 },
   "repository": {
     "type": "git",

@@ -7,13 +7,10 @@ import { fetchStoreDetails } from '../../redux/actions/Stores/storeDetailsAction
 export class StoreDetails extends Component {
   async componentDidMount() {
     const { id } = this.props.match.params;
-    const { fetchStoreDetails } = this.props;
-    await fetchStoreDetails(id);
+    await this.props.fetchStoreDetails(id);
   }
 render() {
-  const { storeDetails, storeDetailsErrors} = this.props;
-  console.log('storeDetails',storeDetails);
-       
+  const { storeDetails, storeDetailsErrors} = this.props;  
     return (
         
       <div className="creatorDetails">

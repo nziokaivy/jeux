@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=$CC_TEST_REPORTER_ID
 sudo: false
 language: node_js
 node_js:
@@ -5,14 +8,14 @@ node_js:
 cache:
   directories:
   - node_modules
-before_install:
-- npm update
 install:
 - npm install
-script:
-- npm test
-- npm run coveralls
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- ./cc-test-reporter before-build
+after_script:
+- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
   email: false
-service_name: travis-pro
-repo_token: Aib0NGZu5010HdYWa5LGw2IngqfA1730S
+
