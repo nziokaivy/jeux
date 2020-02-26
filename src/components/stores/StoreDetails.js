@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
-import "./StoreDetails.css";
+import "../../assets/css/StoreDetails.css";
 import { fetchStoreDetails } from '../../redux/actions/Stores/storeDetailsAction';
+import Header from '../../components/elements/Header/Header';
+import HeroImage from '../../components/elements/HeroImage/HeroImage';
 
 export class StoreDetails extends Component {
   async componentDidMount() {
@@ -12,7 +14,9 @@ export class StoreDetails extends Component {
 render() {
   const { storeDetails, storeDetailsErrors} = this.props;  
     return (
-        
+        <>
+        <Header />
+        <HeroImage />
       <div className="creatorDetails">
           <h1 className="allGames-title"> Store Details</h1>
           <hr className='legend' />
@@ -33,6 +37,7 @@ render() {
           </div>
         )}
       </div>
+      </>
     );
   }
   

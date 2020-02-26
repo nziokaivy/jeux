@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./TagDetails.css";
+import "../../assets/css/TagDetails.css";
 import { fetchTagDetails } from '../../redux/actions/Tags/tagDetailsAction';
+import Header from '../../components/elements/Header/Header';
+import HeroImage from '../../components/elements/HeroImage/HeroImage';
 
 export class TagDetails extends Component {
   constructor(props) {
@@ -18,6 +20,9 @@ export class TagDetails extends Component {
     const { tagDetails } = this.props;
     
     return (
+      <>
+      <Header />
+      <HeroImage />
         <div className="main-game-details">
         <h1 className="allGames-title"> Tag Details</h1>
         <hr className='legend' />
@@ -38,6 +43,7 @@ export class TagDetails extends Component {
         )}
       </div>
       </div>
+      </>
     );
   }
 }

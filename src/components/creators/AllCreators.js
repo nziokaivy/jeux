@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import './AllCreators.css';
+import '../../assets/css/AllCreators.css';
 import { fetchCreators } from '../../redux/actions/Creators/allCreatorsAction';
 import { connect } from "react-redux";
+import Header from '../../components/elements/Header/Header';
+import HeroImage from '../../components/elements/HeroImage/HeroImage';
 
 export class AllCreators extends Component {
   constructor(props) {
@@ -18,6 +20,9 @@ export class AllCreators extends Component {
   render() {
     const { creators } = this.props;
     return (
+      <>
+      <Header />
+      <HeroImage />
       <div>
         <h1 className="allGames-title"> Creators</h1>
         <hr className='legend' />
@@ -37,6 +42,7 @@ export class AllCreators extends Component {
           </div>
         </div>
       </div>
+      </>
     );
   }
 }

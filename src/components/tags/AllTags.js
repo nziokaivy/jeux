@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./AllTags.css";
+import "../../assets/css/AllTags.css";
 import { fetchAllTags } from '../../redux/actions/Tags/allTagsAction';
 import { connect } from "react-redux";
+import Header from '../../components/elements/Header/Header';
+import HeroImage from '../../components/elements/HeroImage/HeroImage';
 
 export class AllTags extends Component {
   constructor(props) {
@@ -19,6 +21,9 @@ export class AllTags extends Component {
     const { tags } = this.props;
 
     return (
+      <>
+      <Header />
+      <HeroImage />
       <div>
           <h1 className="allGames-title"> All Tags</h1>
           <hr className='legend' />
@@ -41,6 +46,7 @@ export class AllTags extends Component {
           </div>
         </div>
       </div>
+      </>
     );
   }
 }

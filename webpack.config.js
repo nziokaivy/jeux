@@ -15,12 +15,12 @@ module.exports = env => {
       rules: [
       {
         test: /\.js$/,
-        include: path.resolve(__dirname, 'src/'),
+        include: path.resolve(__dirname, 'src'),
         use: ['babel-loader']
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        include: path.resolve(__dirname, 'src/'),
+        include: path.resolve(__dirname, 'src/assets/images'),
         use: [
           {
             loader: 'file-loader',
@@ -29,7 +29,7 @@ module.exports = env => {
       },
       {
         test: /\.css$/i,
-        include: path.resolve(__dirname, 'src/components/'),
+        include: path.resolve(__dirname, 'src/assets/css'),
         use: ['style-loader', 'css-loader'],
       },
     ]
@@ -38,13 +38,13 @@ module.exports = env => {
       extensions: ['*', '.js', '.jsx']
     },
     devServer: {
-      contentBase:  path.resolve(__dirname, 'src/'),
+      contentBase:  path.resolve(__dirname, 'public/'),
       historyApiFallback: true,
       port: 9000
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: 'src/index.html',
+        template: 'public/index.html',
       }),
       new Dotenv({
         path: './.env',
